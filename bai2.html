@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arrNew = new Array()
+    function insertNumberToArray(arr,x,index) {
+        if (index < 0 || index > arr.length) {
+            arrNew = arr
+        }else {
+            for (let i = arr.length; i > index ; i--) {
+                arr[i] = arr[i-1]
+            }
+            arr[index] = x
+            return arr
+        }
+    }
+    let arr = [2,3,4,56,7,2]
+    document.write(insertNumberToArray(arr,3,4))
+</script>
+</body>
+</html>

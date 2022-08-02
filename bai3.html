@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //Điều kiện của số nguyên tố
+    function testListPrime(number) {
+        let startNumber = 2;
+        let arr = new Array()
+        while (startNumber < number) {
+            let check = true;
+            for (let i = 2; i <= Math.sqrt(startNumber) ; i++) {
+                if (startNumber % i === 0) {
+                    check = false
+                    break
+                }
+            }
+            if (check) {
+                arr.push(startNumber)
+            }
+            startNumber ++
+        }
+        return arr
+    }
+    function sumOfListPrime(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        return sum
+    }
+    let x  = +prompt('Nhập số x để tính tổng các số nguyên tố')
+    let arr = testListPrime(x)
+    let total = sumOfListPrime(arr)
+    document.write('Tổng số nguyên tố : = ' + total)
+</script>
+</body>
+</html>
